@@ -1,5 +1,6 @@
 package com.anirudhv.android.ims;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class Main2Activity extends AppCompatActivity  {
     private Button login;
     private Button back;
     private FirebaseAuth FBA;
+    private ProgressDialog Progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class Main2Activity extends AppCompatActivity  {
         password = (EditText) findViewById(R.id.password);
         signup = (TextView) findViewById(R.id.signup);
         login = (Button) findViewById(R.id.loginbtn);
+        Progress = new ProgressDialog(this);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,8 @@ public class Main2Activity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 FBA = FirebaseAuth.getInstance();
+                Progress.setMessage("Plese Wait");
+                Progress.show();
                 FBA.signInWithEmailAndPassword(username.getText().toString().trim(), password.getText().toString().trim())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -61,6 +66,7 @@ public class Main2Activity extends AppCompatActivity  {
                                 {
                                     Toast.makeText(Main2Activity.this,"Fail",Toast.LENGTH_SHORT).show();
                                 }
+                                Progress.hide();
                             }
                         });
             }
