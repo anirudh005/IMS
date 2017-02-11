@@ -1,6 +1,7 @@
 package com.anirudhv.android.ims;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if(task.isSuccessful())
                     {
                         Toast.makeText(MainActivity.this,"Successful",Toast.LENGTH_SHORT).show();
+                        finish();
+                        Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+                        MainActivity.this.startActivity(intent);
                     }
                         else
                     {
@@ -73,5 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Progress.hide();
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 }
