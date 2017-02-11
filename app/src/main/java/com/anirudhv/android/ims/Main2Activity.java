@@ -40,6 +40,7 @@ public class Main2Activity extends AppCompatActivity  {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                password.setText(null);
                 Intent intent = new Intent(Main2Activity.this, MainActivity.class);
                 Main2Activity.this.startActivity(intent);
             }
