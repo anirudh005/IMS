@@ -58,7 +58,6 @@ public class Main2Activity extends AppCompatActivity  {
                                 if(task.isSuccessful())
                                 {
                                     Toast.makeText(Main2Activity.this,"Successful",Toast.LENGTH_SHORT).show();
-                                    finish();
                                     Intent intent = new Intent(Main2Activity.this,Main3Activity.class);
                                     Main2Activity.this.startActivity(intent);
                                 }
