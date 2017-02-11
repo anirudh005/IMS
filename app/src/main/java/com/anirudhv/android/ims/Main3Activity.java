@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,7 +23,6 @@ public class Main3Activity extends AppCompatActivity {
         username = FBA.getCurrentUser().getEmail().toString();
         user =(TextView) findViewById(R.id.user);
         user.setText(username);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         signout = (Button) findViewById(R.id.signout);
         signout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

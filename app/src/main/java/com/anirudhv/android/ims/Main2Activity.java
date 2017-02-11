@@ -37,7 +37,7 @@ public class Main2Activity extends AppCompatActivity  {
         signup = (TextView) findViewById(R.id.signup);
         login = (Button) findViewById(R.id.loginbtn);
         Progress = new ProgressDialog(this);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

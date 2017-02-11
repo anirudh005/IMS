@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Register = (Button) findViewById(R.id.Register);
         UserName = (EditText) findViewById(R.id.UserName);
         Password = (EditText) findViewById(R.id.Password);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         Register.setOnClickListener(this);
     }
 
