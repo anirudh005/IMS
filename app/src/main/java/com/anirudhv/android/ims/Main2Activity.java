@@ -57,6 +57,7 @@ public class Main2Activity extends AppCompatActivity  {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful())
                                 {
+                                    password.setText(null);
                                     Toast.makeText(Main2Activity.this,"Successful",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(Main2Activity.this,Main3Activity.class);
                                     Main2Activity.this.startActivity(intent);
