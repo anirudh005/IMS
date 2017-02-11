@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class Main2Activity extends AppCompatActivity  {
         signup = (TextView) findViewById(R.id.signup);
         login = (Button) findViewById(R.id.loginbtn);
         Progress = new ProgressDialog(this);
-
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
